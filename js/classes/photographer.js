@@ -1,10 +1,12 @@
 class Photographer {
-    constructor(name, image, location, description, price, tags) {
+    constructor(name, id, city, country, tags, tagline, price, portrait) {
         this.name = name;
-        this.image = image;
-        this.location = location;
-        this.description = description;
-        this.price = price;
+        this.id = id;
+        this.city = city;
+        this.country = country;
         this.tags = tags;
+        this.tagline = tagline;
+        this.price = price;
+        this.portrait = portrait;
     }
 }
