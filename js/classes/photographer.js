@@ -1,4 +1,5 @@
 class Photographer {
+
     constructor(name, id, city, country, tags, tagline, price, portrait) {
         this.name = name;
         this.id = id;
@@ -10,3 +11,5 @@ class Photographer {
         this.portrait = portrait;
     }
 }
+
+export default Photographer;
