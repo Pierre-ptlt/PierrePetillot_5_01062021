@@ -20,23 +20,13 @@ eval("module.exports = JSON.parse('{\"photographers\":[{\"name\":\"Mimi Keel\",\
 
 /***/ }),
 
-/***/ "./js/classes/photographer.js":
-/*!************************************!*\
-  !*** ./js/classes/photographer.js ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Photographer {\n\n    constructor(name, id, city, country, tags, tagline, price, portrait) {\n        this.name = name;\n        this.id = id;\n        this.city = city;\n        this.country = country;\n        this.tags = tags;\n        this.tagline = tagline;\n        this.price = price;\n        this.portrait = portrait;\n    }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Photographer);\n\n//# sourceURL=webpack://fisheye/./js/classes/photographer.js?");
-
-/***/ }),
-
 /***/ "./js/main.js":
 /*!********************!*\
   !*** ./js/main.js ***!
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_photographes_getAllPhotographes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/photographes/getAllPhotographes.js */ \"./js/utils/photographes/getAllPhotographes.js\");\n/* harmony import */ var _classes_photographer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/photographer.js */ \"./js/classes/photographer.js\");\n/* harmony import */ var _utils_photographes_renderPhotographers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/photographes/renderPhotographers.js */ \"./js/utils/photographes/renderPhotographers.js\");\n\n\n\n\nconst test = (0,_utils_photographes_getAllPhotographes_js__WEBPACK_IMPORTED_MODULE_0__.default)();\nconsole.log(test);\n\nlet photo = new _classes_photographer_js__WEBPACK_IMPORTED_MODULE_1__.default();\nphoto = test[0];\nconsole.log(photo);\n\ndocument.getElementById('photographesIndex').innerHTML = (0,_utils_photographes_renderPhotographers_js__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://fisheye/./js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_photographes_renderPhotographers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/photographes/renderPhotographers.js */ \"./js/utils/photographes/renderPhotographers.js\");\n/* harmony import */ var _utils_tags_getAllTags_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/tags/getAllTags.js */ \"./js/utils/tags/getAllTags.js\");\n\n\n\ndocument.getElementById('photographesIndex').innerHTML = (0,_utils_photographes_renderPhotographers_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_utils_tags_getAllTags_js__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n\n//# sourceURL=webpack://fisheye/./js/main.js?");
 
 /***/ }),
 
@@ -56,7 +46,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _classes_photographer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../classes/photographer */ \"./js/classes/photographer.js\");\n/* harmony import */ var _getAllPhotographes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getAllPhotographes */ \"./js/utils/photographes/getAllPhotographes.js\");\n\n\n\nconst photographerList = (0,_getAllPhotographes__WEBPACK_IMPORTED_MODULE_1__.default)();\nconst renderPhotographers = () => {\n    return photographerList.map(({ name, portrait, tags, tagline, city, country, price }) => (\n        `<div class=\"photographer\">\n        <img src=\"../../../images/Sample Photos/Photographers ID Photos/${portrait}\">\n        <h1>${name}</h1>\n        <p>${city}, ${country}</p>\n        </div>`\n        )\n    );\n};\nconsole.log(renderPhotographers);\n\n// function render(photographe) {\n//     return `<div class=\"photographer\">\n//     <h1>${photographe.name}</h1>\n//     </div>`;\n// }\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderPhotographers);\n\n\n\n\n//# sourceURL=webpack://fisheye/./js/utils/photographes/renderPhotographers.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getAllPhotographes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getAllPhotographes */ \"./js/utils/photographes/getAllPhotographes.js\");\n\n\nconst photographerList = (0,_getAllPhotographes__WEBPACK_IMPORTED_MODULE_0__.default)();\n\nconst renderPhotographers = (tag) => {\n    return photographerList.map(({ name, portrait, tags, tagline, city, country, price }) => (\n        `<div class=\"photographer\">\n        <img class=\"portrait\" src=\"../../../images/Sample Photos/Photographers ID Photos/${portrait}\">\n        <h1>${name}</h1>\n        <p>${city}, ${country}</p>\n        <p>${tagline}</p>\n        <p>${price}</p>\n        <p>#${tags}</p>\n        </div>`\n        )\n    );\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderPhotographers);\n\n\n\n\n//# sourceURL=webpack://fisheye/./js/utils/photographes/renderPhotographers.js?");
+
+/***/ }),
+
+/***/ "./js/utils/tags/getAllTags.js":
+/*!*************************************!*\
+  !*** ./js/utils/tags/getAllTags.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _datas_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../datas.json */ \"./datas.json\");\n\n\nlet tagList = _datas_json__WEBPACK_IMPORTED_MODULE_0__.photographers.tags;\n\nconst getAllTags = () => {\n    console.log(tagList);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getAllTags);\n\n\n//# sourceURL=webpack://fisheye/./js/utils/tags/getAllTags.js?");
 
 /***/ })
 

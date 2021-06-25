@@ -1,4 +1,6 @@
-class Photographer {
+import { photographers } from '../../datas.json';
+
+class Photographers {
 
     constructor(name, id, city, country, tags, tagline, price, portrait) {
         this.name = name;
@@ -12,4 +14,4 @@ class Photographer {
     }
 }
 
-export default Photographer;
+export default Photographers;
