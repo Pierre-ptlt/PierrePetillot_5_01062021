@@ -2,7 +2,7 @@ import getAllPhotographers from "./getAllPhotographes";
 
 const photographerList = getAllPhotographers();
 
-const renderPhotographers = (tag) => {
+const renderPhotographers = () => {
     return photographerList.map(({ name, portrait, tags, tagline, city, country, price }) => (
         `<div class="photographer">
         <img class="portrait" src="../../../images/Sample Photos/Photographers ID Photos/${portrait}">
