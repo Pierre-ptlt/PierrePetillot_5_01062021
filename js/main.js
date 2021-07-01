@@ -1,5 +1,16 @@
-import renderPhotographers from "./utils/photographes/renderPhotographers.js";
-import getAllTags from "./utils/tags/getAllTags.js";
+import { photographers } from '../datas.json';
+import List from './classes/List';
 
-document.getElementById('photographesIndex').innerHTML = renderPhotographers();
-getAllTags();
+let list = new List();
+
+list.build(photographers);
+list.display(list.all);
+list.collectTags();
+list.displayTags();
+
+if (list.checked) {
+    for (let photographer of photographers) {
+        let res = list.filtered.indexOf(photographer.tags);
+        console.log(res);
+    }
+}

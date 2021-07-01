@@ -3,10 +3,14 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/*img {
-    width: 100px;
-    height: 100px;
-}*/
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: #901C1C;
+    font-weight: 300;
+}
 
 header {
     display: flex;
@@ -20,34 +24,56 @@ header {
     padding: 5px;
     width: 120px;
     height: 50px;
-
 }
 
 .indexHeader {
     display: flex;
     justify-content: space-between;
     margin-right: 100px;
+    width: 100%;
 }
 
-h1 {
-    color: #901C1C;
-    font-weight: 300;
+.indexTitle {
+    margin-right: 30px;
 }
+
+.tags {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.tag {
+    margin-right: 6px;
+    height: 26px;
+    padding: 3px 6px 3px 6px;
+    background-color: white;
+    border-radius: 13px;
+    border: solid #afacac 1px;
+    color: #901C1C;
+    cursor: pointer;
+}
+
+
 
 .photographesIndex {
     display: flex;
     flex-wrap: wrap;
     padding: 30px;
+    margin: auto;
     justify-content: space-around;
+    max-width: 1100px;
 }
 
-.photogapher {
+.photographer {
     margin-left: 40px;
     margin-right: 60px;
+    min-width: 250px;
 }
 
 .portrait {
     width: 200px;
     height: 200px;
     border-radius: 25px;
+    object-fit: cover;
 }
