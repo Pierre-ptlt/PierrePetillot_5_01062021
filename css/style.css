@@ -49,7 +49,7 @@ header {
     padding: 3px 6px 3px 6px;
     background-color: white;
     border-radius: 13px;
-    border: solid #afacac 1px;
+    border: solid #bbbaba 1px;
     color: #901C1C;
     cursor: pointer;
 }
@@ -71,9 +71,59 @@ header {
     min-width: 250px;
 }
 
+.portraitWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .portrait {
     width: 200px;
     height: 200px;
-    border-radius: 25px;
+    border-radius: 100px;
     object-fit: cover;
+}
+
+.photographerName {
+    color: #ca4f16;
+}
+
+.photographerDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -14px;
+}
+
+.basement {
+    color: #992718;
+    margin-top: 2px;
+    margin-bottom: -2px;
+}
+
+.slogan {
+    font-size: smaller;
+    margin-bottom: 0px;
+}
+
+.price {
+    font-size: smaller;
+    font-weight: lighter;
+    margin-bottom: 0px;
+}
+
+.photographerTags {
+    display: flex;
+    justify-content: center;
+
+}
+
+.itemTag {
+    margin-right: 6px;
+    height: 20px;
+    padding: 3px;
+    background-color: white;
+    border-radius: 13px;
+    border: solid #bbbaba 1px;
+    color: #901C1C;
 }

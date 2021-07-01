@@ -20,13 +20,16 @@ class Photographer {
     }
 
     render() {
-    return `<a href="#" class="photographer">
-            <img class="portrait" src="../../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
-            <h1>${this.name}</h1>
-            <p>${this.city}, ${this.country}</p>
-            <p>${this.tagline}</p>
-            <p>${this.price}</p>
-            <p>${this.displayTags()}</p>
+    return `<div class="photographer">
+                <a href="#" class="portraitWrapper">
+                <img class="portrait" src="../../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
+                <h1 class="photographerName">${this.name}</h1></a>
+                <div class="photographerDescription">
+                    <p class="basement">${this.city}, ${this.country}</p>
+                    <p class="slogan">${this.tagline}</p>
+                    <p class="price">${this.price}€/jour</p>
+                </div>
+                <p class="photographerTags">${this.displayTags()}</p>
             </div>`;
     }
 }
