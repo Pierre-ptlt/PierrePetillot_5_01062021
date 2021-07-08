@@ -3,9 +3,8 @@ import Photographer from "./Photographer";
 class List {
   constructor() {
     this.all = [];
-    this.filtered = new Set();
+    this.tagsSelected = new Set();
     this.tags = new Set();
-    this.checked = false;
   }
 
   build(items) {
@@ -31,45 +30,54 @@ class List {
     console.log(this.tags);
   }
 
+  formatTags(tag) {
+      let first = tag.charAt(0).toUpperCase();
+      let others = tag.substr(1, tag.length);
+      return first + others;
+  }
+
   displayTags() {
 
     for (let tag of this.tags) {
-      tag.charAt(0).toUpperCase();
       document.getElementById(
         "tags"
-      ).innerHTML += `<button class="tag">#${tag} </button>`;
+      ).innerHTML += `<button class="tag" data-tag-id="${tag}">#${this.formatTags(tag)} </button>`;
     }
 
     const tagButtons = document.querySelectorAll('.tag');
     tagButtons.forEach((tagButton) => {
         let boolButton = false;
+        let tagName = tagButton.getAttribute('data-tag-id');
         tagButton.addEventListener('click', () => {
             if (!boolButton) {
                 boolButton = true;
                 tagButton.style.color = "white";
                 tagButton.style.background = "#901C1C";
-                this.filtered.add(tagButton.innerHTML);
+                this.tagsSelected.add(tagName);
 
             }
             else {
                 boolButton = false;
                 tagButton.style.background = "white";
                 tagButton.style.color = "#901C1C";
-                this.filtered.delete(tagButton.innerHTML);
+                this.tagsSelected.delete(tagName);
             }
-            this.checkFiltered();
+            this.displayFiltered();
         });
     });
   }
 
-  checkFiltered() {
-    if (this.filtered.size > 0) {
-        this.checked = true;
+  displayFiltered() {
+    let list = new Set();
+    if (this.tagsSelected.size > 0) {
+        this.all.forEach(photographer => {
+            if (this.tagsSelected.includes(photographer.tags)) {
+                list.add(photographer);
+            }
+        });
     }
-    else {
-        this.checked = false;
-    }
-  }
+    this.display(list);
+}
 }
 
 export default List;
