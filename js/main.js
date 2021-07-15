@@ -7,3 +7,4 @@ list.build(photographers);
 list.display(list.all);
 list.collectTags();
 list.displayTags();
+list.listenForFiltering();

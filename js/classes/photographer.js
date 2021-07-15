@@ -19,10 +19,19 @@ class Photographer {
         return html;
     }
 
+    hasTags(tag) {
+        if (this.tags.includes(tag)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     render() {
     return `<div class="photographer">
                 <a href="#" class="portraitWrapper">
-                <img class="portrait" src="../../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
+                <img class="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
                 <h1 class="photographerName">${this.name}</h1></a>
                 <div class="photographerDescription">
                     <p class="basement">${this.city}, ${this.country}</p>

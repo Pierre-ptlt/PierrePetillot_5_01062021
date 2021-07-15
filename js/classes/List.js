@@ -43,40 +43,48 @@ class List {
         "tags"
       ).innerHTML += `<button class="tag" data-tag-id="${tag}">#${this.formatTags(tag)} </button>`;
     }
+  }
 
+    listenForFiltering() {
     const tagButtons = document.querySelectorAll('.tag');
     tagButtons.forEach((tagButton) => {
-        let boolButton = false;
-        let tagName = tagButton.getAttribute('data-tag-id');
+
         tagButton.addEventListener('click', () => {
-            if (!boolButton) {
-                boolButton = true;
+
+          let tagName = tagButton.getAttribute('data-tag-id');
+
+
+            if (!this.tagsSelected.has(tagName)) {
                 tagButton.style.color = "white";
                 tagButton.style.background = "#901C1C";
                 this.tagsSelected.add(tagName);
 
             }
             else {
-                boolButton = false;
                 tagButton.style.background = "white";
                 tagButton.style.color = "#901C1C";
                 this.tagsSelected.delete(tagName);
             }
-            this.displayFiltered();
+            let filtered = this.filter();
+            if (this.tagsSelected.size == 0) {
+              filtered = this.all;
+            }
+            this.display(filtered);
         });
     });
   }
 
-  displayFiltered() {
-    let list = new Set();
-    if (this.tagsSelected.size > 0) {
-        this.all.forEach(photographer => {
-            if (this.tagsSelected.includes(photographer.tags)) {
-                list.add(photographer);
-            }
-        });
-    }
-    this.display(list);
+  filter() {
+    return this.all.filter(photographer => {
+      let hasTag = false;
+      this.tagsSelected.forEach(tag => {
+        if (photographer.hasTags(tag))
+        {
+          hasTag = true;
+        }
+      });
+      return hasTag;
+    });
 }
 }
 
