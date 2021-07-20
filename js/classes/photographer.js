@@ -30,8 +30,8 @@ class Photographer {
 
     render() {
     return `<div class="photographer">
-                <a href="#" class="portraitWrapper">
-                <img class="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
+                <a href="photographer.html?id=${this.id}" class="portraitWrapper">
+                <img  class="portrait" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
                 <h1 class="photographerName">${this.name}</h1></a>
                 <div class="photographerDescription">
                     <p class="basement">${this.city}, ${this.country}</p>
