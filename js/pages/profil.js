@@ -10,6 +10,5 @@ const photographerId = urlParams.get('id');
         return photographerId === id.toString();
     });
     let profile = new Photographer(photographer);
-    document.getElementById('photographerInfos').innerHTML = profile.render();
+    document.getElementById('photographerInfos').innerHTML = profile.renderProfile();
 });
-console.log('lidhfds');

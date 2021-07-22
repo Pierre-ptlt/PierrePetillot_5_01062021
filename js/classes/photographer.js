@@ -41,6 +41,23 @@ class Photographer {
                 <p class="photographerTags">${this.displayTags()}</p>
             </div>`;
     }
+
+    renderProfile() {
+        return `<div class="profile">
+                    <a href="photographer.html?id=${this.id}" class="portraitWrapperProfile">
+                    <div class="photographerDescriptionProfile">
+                        <div class="profileNameWrapper">
+                            <h1 class="photographerNameProfile">${this.name}</h1></a>
+                            <button class="contactMe">Contactez-moi</button>
+                        </div>
+                        <p class="basement">${this.city}, ${this.country}</p>
+                        <p class="slogan">${this.tagline}</p>
+                        <p class="price">${this.price}€/jour</p>
+                        <p class="photographerTagsProfile">${this.displayTags()}</p>
+                    </div>
+                    <img  class="portraitProfile" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
+                </div>`;
+        }
 }
 
 export default Photographer;

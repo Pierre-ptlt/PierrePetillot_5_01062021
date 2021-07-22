@@ -92,7 +92,6 @@ header {
 .photographerDescription {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: -14px;
 }
 
@@ -116,7 +115,6 @@ header {
 .photographerTags {
     display: flex;
     justify-content: center;
-
 }
 
 .itemTag {
@@ -127,4 +125,64 @@ header {
     border-radius: 13px;
     border: solid #bbbaba 1px;
     color: #901C1C;
+}
+
+.photographerInfos {
+    margin: auto;
+    padding: 50px 50px 0px 50px;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(240, 238, 238);
+    max-width: 1400px;
+    width: 100%;
+}
+
+.photographerDescriptionProfile {
+    display: flex;
+    flex-direction: column;
+    margin-left: -200px;
+}
+
+.photographerTagsProfile {
+    display: flex;
+}
+
+.contactMe {
+    height: 50px;
+    width: 135px;
+    margin-top: 40px;
+    margin-left: 60px;
+    background-color: #901C1C;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    cursor: pointer;
+}
+
+.photographerNameProfile {
+    font-size: 50px;
+    color: #d65113;
+}
+
+.portraitWrapperProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileNameWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portraitProfile {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-top: 30px;
+    margin-right: 40px;
 }
