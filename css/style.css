@@ -135,7 +135,7 @@ header {
 .profile {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(240, 238, 238);
+    background-color: rgb(245, 245, 245);
     max-width: 1400px;
     width: 100%;
 }

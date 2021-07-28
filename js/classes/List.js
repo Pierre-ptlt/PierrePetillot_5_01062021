@@ -45,7 +45,7 @@ class List {
     }
   }
 
-    listenForFiltering() {
+  listenForFiltering() {
     const tagButtons = document.querySelectorAll('.tag');
     tagButtons.forEach((tagButton) => {
 
