@@ -27,7 +27,6 @@ class List {
         this.tags.add(tag);
       });
     });
-    console.log(this.tags);
   }
 
   formatTags(tag) {

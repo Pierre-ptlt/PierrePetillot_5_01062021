@@ -22,7 +22,7 @@ const photographerId = urlParams.get('id');
                  let media = new Media(item);
                  media.photographerName = profile.name;
                  list.add(media);
-                 media.render();
+                 list.display();
             }
         });
 });
