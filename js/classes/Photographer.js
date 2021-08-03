@@ -11,6 +11,11 @@ class Photographer {
         this.portrait = data.portrait;
     }
 
+    displayProfile()
+    {
+        document.getElementById('photographerInfos').innerHTML = this.renderProfile();
+    }
+
     displayTags() {
         let html = '';
         for (let tag of this.tags) {

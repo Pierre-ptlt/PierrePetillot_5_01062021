@@ -1,6 +1,5 @@
 import Photographer from "../classes/Photographer.js";
 import MediaList from "../classes/MediaList.js";
-import Media from "../classes/Media.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const photographerId = urlParams.get('id');
@@ -12,17 +11,9 @@ const photographerId = urlParams.get('id');
         return photographerId === id.toString();
     });
     let profile = new Photographer(photographer);
-    document.getElementById('photographerInfos').innerHTML = profile.renderProfile();
+    profile.displayProfile();
 
-    let list = new MediaList();
-    data.media.forEach(item =>
-        {
-            if (item.photographerId.toString() === photographerId)
-            {
-                 let media = new Media(item);
-                 media.photographerName = profile.name;
-                 list.add(media);
-                 list.display();
-            }
-        });
+    let list = new MediaList(profile);
+    list.build(data);
+    list.display();
 });
