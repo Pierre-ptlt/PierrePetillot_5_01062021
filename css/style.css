@@ -186,3 +186,38 @@ header {
     margin-top: 30px;
     margin-right: 40px;
 }
+
+.allMedias {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mediaItem {
+    margin-left: 40px;
+    margin-right: 60px;
+    min-width: 250px;
+    max-width: 250px;
+    width: 100%;
+}
+
+.mediaWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.media {
+
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.mediaInfos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+}

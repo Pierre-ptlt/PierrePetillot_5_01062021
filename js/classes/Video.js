@@ -15,14 +15,18 @@ class Video {
 
     render()
     {
-        return `<div class="mediaVideoItem">
+        return `<div class="mediaItem">
         <a href="#" class="mediaWrapper">
-        <video controls class="mediaVideo">
+        <video controls class="media">
             <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
         </video>
+        </a>
         <div class="mediaInfos">
-            <p class="mediaTitle">${this.title}</p></a>
-            <dic class="mediaLikes">${this.likes}</dic>
+            <p class="mediaTitle">${this.title}</p>
+            <div class="likes">
+                <div class="mediaLikes">${this.likes}</div>
+                <button class="likeButton"><i class="fa-solid fa-heart"></i></button>
+            </div>
         </div>
     </div>`;
     }

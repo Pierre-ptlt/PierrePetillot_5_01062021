@@ -24,6 +24,14 @@ class Photographer {
         return html;
     }
 
+    displayProfileTags() {
+        let html = '';
+        for (let tag of this.tags) {
+            html += `<a href="index.html?tag=${tag}" class="itemTag">#${tag} </a>`;
+        }
+        return html;
+    }
+
     hasTags(tag) {
         if (this.tags.includes(tag)) {
             return true;
@@ -58,7 +66,7 @@ class Photographer {
                         <p class="basement">${this.city}, ${this.country}</p>
                         <p class="slogan">${this.tagline}</p>
                         <p class="price">${this.price}€/jour</p>
-                        <p class="photographerTagsProfile">${this.displayTags()}</p>
+                        <p class="photographerTagsProfile">${this.displayProfileTags()}</p>
                     </div>
                     <img  class="portraitProfile" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
                 </div>`;

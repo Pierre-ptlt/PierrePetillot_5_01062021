@@ -16,14 +16,16 @@ class Image {
 
     render()
     {
-        return `<div class="mediaVideoItem">
+        return `<div class="mediaItem">
         <a href="#" class="mediaWrapper">
-        <video controls class="mediaVideo">
-            <source src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
-        </video>
+        <img class="media" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
+        </a>
         <div class="mediaInfos">
-            <p class="mediaTitle">${this.title}</p></a>
-            <dic class="mediaLikes">${this.likes}</dic>
+            <p class="mediaTitle">${this.title}</p>
+            <div class="likes">
+                <div class="mediaLikes">${this.likes}</div>
+                <button class="likeButton"><i class="fa-solid fa-heart"></i></button>
+            </div>
         </div>
     </div>`;
     }

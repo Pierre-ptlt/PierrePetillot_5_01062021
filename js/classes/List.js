@@ -73,6 +73,22 @@ class List {
     });
   }
 
+  addUrlTag()
+  {
+  //   const tagButtons = document.querySelectorAll('.tag');
+  //   tagButtons.forEach(tagButton => {
+
+  //       let tagName = tagButton.getAttribute('data-tag-id');
+  //       if (tag == tagName)
+  //       {
+  //         tagButton.style.color = "white";
+  //         tagButton.style.background = "#901C1C";
+  //         this.tagsSelected.add(tagName);
+  //       }
+  //   });
+  console.log('blabla');
+  }
+
   filter() {
     return this.all.filter(photographer => {
       let hasTag = false;
