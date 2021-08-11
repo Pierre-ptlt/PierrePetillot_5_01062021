@@ -24,7 +24,7 @@ class Image {
             <p class="mediaTitle">${this.title}</p>
             <div class="likes">
                 <div class="mediaLikes">${this.likes}</div>
-                <button class="likeButton"><i class="fa-solid fa-heart"></i></button>
+                <button class="likeButton"><i class="fas fa-heart"></i></button>
             </div>
         </div>
     </div>`;

@@ -1,4 +1,4 @@
-import Photographer from "./Photographer";
+import Photographer from "./Photographer.js";
 
 class List {
   constructor() {
@@ -73,20 +73,15 @@ class List {
     });
   }
 
-  addUrlTag()
+  addUrlTag(tag)
   {
-  //   const tagButtons = document.querySelectorAll('.tag');
-  //   tagButtons.forEach(tagButton => {
+    let button = document.querySelector(`[data-tag-id=${tag}]`);
+    button.style.color = "white";
+    button.style.background = "#901C1C";
+    this.tagsSelected.add(tag);
+    let filtered = this.filter();
+    this.display(filtered);
 
-  //       let tagName = tagButton.getAttribute('data-tag-id');
-  //       if (tag == tagName)
-  //       {
-  //         tagButton.style.color = "white";
-  //         tagButton.style.background = "#901C1C";
-  //         this.tagsSelected.add(tagName);
-  //       }
-  //   });
-  console.log('blabla');
   }
 
   filter() {
