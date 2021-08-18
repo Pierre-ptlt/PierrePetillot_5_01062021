@@ -15,7 +15,7 @@ class Video {
 
     render()
     {
-        return `<div class="mediaItem">
+        return `<div class="mediaItem" media-id="${this.id}">
         <a href="#" class="mediaWrapper">
         <video controls class="media">
             <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
@@ -29,6 +29,14 @@ class Video {
             </div>
         </div>
     </div>`;
+    }
+
+    listenLike()
+    {
+        let likeButton = document.querySelectorAll("likeButton");
+        likeButton.forEach(button => {
+            console.log('like ajouté');
+        });
     }
 }
 

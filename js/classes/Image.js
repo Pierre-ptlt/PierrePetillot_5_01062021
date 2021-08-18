@@ -16,7 +16,7 @@ class Image {
 
     render()
     {
-        return `<div class="mediaItem">
+        return `<div class="mediaItem" media-id="${this.id}">
         <a href="#" class="mediaWrapper">
         <img class="media" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
         </a>
@@ -28,6 +28,14 @@ class Image {
             </div>
         </div>
     </div>`;
+    }
+
+    listenLike()
+    {
+        let likeButton = document.querySelectorAll("likeButton");
+        likeButton.forEach(button => {
+            console.log('like ajouté');
+        });
     }
 }
 

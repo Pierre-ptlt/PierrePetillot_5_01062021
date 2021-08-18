@@ -217,7 +217,20 @@ header {
     justify-content: space-between;
 }
 
+.mediaLikes {
+    color: #901C1C;;
+}
+
 .likes {
     display: flex;
     align-items: center;
+}
+
+.mediaTitle {
+    color: #901C1C;
+};
+
+.likeButton {
+    border: 0px;
+    color: #901C1C;
 }

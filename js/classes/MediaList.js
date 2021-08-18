@@ -17,7 +17,6 @@ class MediaList {
                 {
                      let media = this.factory.build(item, this.photographer);
                      this.all.push(media);
-                     console.log(media);
                 }
             });
     }
@@ -31,6 +30,12 @@ class MediaList {
         document.getElementById('allMedias').innerHTML = html;
     }
 
+    listen()
+    {
+        this.all.forEach(media => {
+            media.listenLike();
+        });
+    }
 }
 
 export default MediaList;

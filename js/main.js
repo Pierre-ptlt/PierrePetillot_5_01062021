@@ -1,5 +1,4 @@
 import List from './classes/List.js';
-import './pages/profil.js';
 
 fetch('../datas.json').then(data => data.json())
 .then(data => {
@@ -13,5 +12,8 @@ fetch('../datas.json').then(data => data.json())
     list.collectTags();
     list.displayTags();
     list.listenForFiltering();
-    list.addUrlTag(urlTag);
+    if (urlTag)
+    {
+        list.addUrlTag(urlTag);
+    }
 });
