@@ -33,7 +33,10 @@ class MediaList {
     listen()
     {
         this.all.forEach(media => {
-            media.listenLike();
+            let likeButton = document.querySelector(`[data-id="${media.id}"]`);
+            likeButton.addEventListener('click', () => {
+                media.toggle();
+            });
         });
     }
 }

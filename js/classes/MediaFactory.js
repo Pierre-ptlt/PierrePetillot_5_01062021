@@ -11,11 +11,6 @@ class MediaFactory {
             return new Video(data, photographer);
         }
     }
-
-    addLike(data)
-    {
-        data.likes++;
-    }
 }
 
 export default MediaFactory;
