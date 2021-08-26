@@ -17,4 +17,9 @@ const photographerId = urlParams.get('id');
     list.build(data);
     list.display();
     list.listen();
+
+    document.getElementById('buttonPopularity').addEventListener('click', () => {
+        console.log(this.all.sort((a, b) => b.likes - a.likes));
+        // console.log(list.all);
+    });
 });

@@ -31,12 +31,10 @@ class Video {
     </div>`;
     }
 
-    listenLike()
+    toggle()
     {
-        let likeButton = document.querySelectorAll("likeButton");
-        likeButton.forEach(button => {
-            console.log('like ajouté');
-        });
+        let likeButton = document.querySelector(`[data-id="${this.id}"]`);
+        console.log(likeButton, 'video');
     }
 }
 

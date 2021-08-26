@@ -34,9 +34,12 @@ class MediaList {
     {
         this.all.forEach(media => {
             let likeButton = document.querySelector(`[data-id="${media.id}"]`);
-            likeButton.addEventListener('click', () => {
-                media.toggle();
-            });
+            if (likeButton)
+            {
+                likeButton.addEventListener('click', () => {
+                    media.toggle();
+                });
+            }
         });
     }
 }

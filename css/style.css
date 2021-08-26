@@ -7,6 +7,10 @@ a {
     text-decoration: none;
 }
 
+li {
+    list-style-type: none;
+   }
+
 h1 {
     color: #901C1C;
     font-weight: 300;
@@ -187,6 +191,64 @@ header {
     margin-right: 40px;
 }
 
+.trier {
+    display: flex;
+    margin-left: 50px;
+    height: 100px;
+    align-items: center;
+    position: relative;
+}
+
+.trierPar {
+    font-weight: bolder;
+}
+
+.deroulant {
+    display: flex;
+    flex-direction: column;
+}
+
+.triButton {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 135px;
+    margin-top: 40px;
+    margin-left: 60px;
+    background-color: #901C1C;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    cursor: pointer;
+    position: absolute;
+    left: 50px;
+    top : -12px;
+}
+
+.sous {
+    top: 38px;
+    display: flex;
+    padding-left: 20px;
+    border-top:solid 0.5px white ;
+    display: none;
+}
+
+.sous-1 {
+    top: 88px;
+}
+
+.arrowUp {
+    animation-fill-mode: forwards;
+}
+
+.arrowUp:hover {
+    animation: arrow-spin 500ms;
+}
+
+.arrowUp:hover .sous {
+    display: block;
+}
+
 .allMedias {
     display: flex;
     flex-wrap: wrap;
@@ -233,4 +295,26 @@ header {
 .likeButton {
     border: 0px;
     color: #901C1C;
+}
+
+#buttonPopularity {
+    justify-content: space-around;
+}
+
+@keyframes arrow-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes menu-appearance {
+    from {
+        transform: translateY(20px);
+    }
+    to   {
+        transform: translateY(0px);
+    }
 }

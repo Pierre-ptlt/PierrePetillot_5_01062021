@@ -12,6 +12,7 @@ class Image {
         this.date = data.date;
         this.price = data.price;
         this.photographerName = photographer.name;
+        this.liked = false;
     }
 
     render()
@@ -32,9 +33,17 @@ class Image {
 
     toggle()
     {
-        let likeButton = document.querySelector(`[data-id="${this.id}"]`);
-        
-        // });
+        if (!this.liked)
+        {
+            this.likes++;
+            this.liked = true;
+        }
+        else if (this.liked)
+        {
+            this.likes = this.likes - 1;
+            this.liked = false;
+        }
+        console.log(this.liked, this.likes);
     }
 }
 
