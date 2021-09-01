@@ -65,7 +65,6 @@ class Photographer {
                         </div>
                         <p class="basement">${this.city}, ${this.country}</p>
                         <p class="slogan">${this.tagline}</p>
-                        <p class="price">${this.price}€/jour</p>
                         <p class="photographerTagsProfile">${this.displayProfileTags()}</p>
                     </div>
                     <img  class="portraitProfile" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">

@@ -1,16 +1,11 @@
-class Video {
+import Media from "./Media.js";
 
-    constructor(data, photographer)
+class Video extends Media {
+
+    constructor(data, photographerName)
     {
-        this.id = data.id;
-        this.photographerId = data.photographerId;
-        this.title = data.title;
+        super(data, photographerName);
         this.src = data.video;
-        this.tags = data.tags;
-        this.likes = data.likes;
-        this.date = data.date;
-        this.price = data.price;
-        this.photographerName = photographer.name;
     }
 
     render()
@@ -24,17 +19,11 @@ class Video {
         <div class="mediaInfos">
             <p class="mediaTitle">${this.title}</p>
             <div class="likes">
-                <div class="mediaLikes">${this.likes}</div>
-                <button class="likeButton"><i class="fas fa-heart"></i></button>
+                <div class="mediaLikes" data-media-id=${this.id}>${this.likes}</div>
+                <button class="likeButton" data-id="${this.id}"><i class="fas fa-heart"></i></button>
             </div>
         </div>
     </div>`;
-    }
-
-    toggle()
-    {
-        let likeButton = document.querySelector(`[data-id="${this.id}"]`);
-        console.log(likeButton, 'video');
     }
 }
 

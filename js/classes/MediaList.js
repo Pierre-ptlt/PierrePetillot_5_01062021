@@ -7,6 +7,15 @@ class MediaList {
          this.all = [];
          this.photographer = photographer;
          this.factory = new MediaFactory();
+         this.totalLikes = 0;
+    }
+
+    countTotalLikes()
+    {
+        this.all.forEach(media => {
+            this.totalLikes += media.likes;
+        });
+        return this.totalLikes;
     }
 
     build(data)
@@ -15,10 +24,14 @@ class MediaList {
             {
                 if (item.photographerId.toString() == this.photographer.id)
                 {
-                     let media = this.factory.build(item, this.photographer);
+                     let media = this.factory.build(item, this.photographer.name);
                      this.all.push(media);
                 }
             });
+            window.setTimeout(() => {
+                this.countTotalLikes();
+                this.displayTotalLikes();
+            }, 500);
     }
 
     display()
@@ -30,6 +43,12 @@ class MediaList {
         document.getElementById('allMedias').innerHTML = html;
     }
 
+    displayTotalLikes()
+    {
+        document.getElementById('totalLikes').innerHTML = this.totalLikes + `<i class="fas fa-heart" id="totalHeart"></i>`;
+        document.getElementById('totalPrice').innerHTML = `<p class="price">${this.photographer.price}€/jour</p>`;
+    }
+
     listen()
     {
         this.all.forEach(media => {
@@ -38,6 +57,15 @@ class MediaList {
             {
                 likeButton.addEventListener('click', () => {
                     media.toggle();
+                    if(!media.isLiked)
+                    {
+                        this.totalLikes--;
+                    }
+                    else
+                    {
+                        this.totalLikes++;
+                    }
+                    this.displayTotalLikes();
                 });
             }
         });

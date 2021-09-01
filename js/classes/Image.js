@@ -1,18 +1,11 @@
-class Image {
+import Media from "./Media.js";
 
-    constructor(data, photographer)
+class Image extends Media {
+
+    constructor(data, photographerName)
     {
-        this.id = data.id;
-        this.photographerId = data.photographerId;
-        this.title = data.title;
+        super(data, photographerName);
         this.image = data.image;
-        this.image = data.image;
-        this.tags = data.tags;
-        this.likes = data.likes;
-        this.date = data.date;
-        this.price = data.price;
-        this.photographerName = photographer.name;
-        this.liked = false;
     }
 
     render()
@@ -24,26 +17,11 @@ class Image {
         <div class="mediaInfos">
             <p class="mediaTitle">${this.title}</p>
             <div class="likes">
-                <div class="mediaLikes">${this.likes}</div>
+                <div class="mediaLikes" data-media-id="${this.id}">${this.likes}</div>
                 <button class="likeButton" data-id="${this.id}"><i class="fas fa-heart"></i></button>
             </div>
         </div>
     </div>`;
-    }
-
-    toggle()
-    {
-        if (!this.liked)
-        {
-            this.likes++;
-            this.liked = true;
-        }
-        else if (this.liked)
-        {
-            this.likes = this.likes - 1;
-            this.liked = false;
-        }
-        console.log(this.liked, this.likes);
     }
 }
 

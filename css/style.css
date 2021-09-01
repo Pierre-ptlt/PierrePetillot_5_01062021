@@ -113,7 +113,6 @@ header {
 .price {
     font-size: smaller;
     font-weight: lighter;
-    margin-bottom: 0px;
 }
 
 .photographerTags {
@@ -297,8 +296,25 @@ header {
     color: #901C1C;
 }
 
+.totalLikesWrapper {
+    display: flex;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 1;
+    width: 200px;
+    bottom: 0;
+    right: 100px;
+    font-size: small;
+    background-color: rgba(228, 84, 84, 0.781);
+}
+
 #buttonPopularity {
     justify-content: space-around;
+}
+
+#totalHeart {
+    margin-left: 9px;
 }
 
 @keyframes arrow-spin {
