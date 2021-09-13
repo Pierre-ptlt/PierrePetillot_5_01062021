@@ -49,7 +49,14 @@ class MediaList {
         document.getElementById('totalPrice').innerHTML = `<p class="price">${this.photographer.price}€/jour</p>`;
     }
 
-    listen()
+    listenForFilter()
+    {
+        document.getElementById('buttonPopularity').addEventListener('click',() => {
+            console.log(this.all.sort((a, b) => b.likes - a.likes));
+        });
+    }
+
+    listenForLike()
     {
         this.all.forEach(media => {
             let likeButton = document.querySelector(`[data-id="${media.id}"]`);
