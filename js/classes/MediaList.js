@@ -54,6 +54,14 @@ class MediaList {
         document.getElementById('buttonPopularity').addEventListener('click',() => {
             console.log(this.all.sort((a, b) => b.likes - a.likes));
         });
+
+        document.getElementById('buttonDate').addEventListener('click',() => {
+            console.log(this.all.sort((a, b) => b.date - a.date));
+        });
+
+        document.getElementById('buttonTitle').addEventListener('click',() => {
+            console.log(this.all.sort((a, b) => b.title - a.title));
+        });
     }
 
     listenForLike()
