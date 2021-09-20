@@ -18,4 +18,5 @@ const photographerId = urlParams.get('id');
     list.display();
     list.listenForLike();
     list.listenForFilter();
+    list.listenForSlider();
 });

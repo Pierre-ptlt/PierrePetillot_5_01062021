@@ -202,9 +202,32 @@ header {
     font-weight: bolder;
 }
 
-.deroulant {
+.buttonDefault {
     display: flex;
+    justify-content: space-around;
+}
+
+.deroulantClosed {
+    display: flex;
+    position: absolute;
+    left: 50px;
+    top : 33px;
+}
+
+.deroulantClosed:hover {
+    display: none;
+}
+
+.deroulant {
+    display: none;
     flex-direction: column;
+    position: absolute;
+    left: 50px;
+    top : 33px;
+}
+
+.deroulant:hover {
+    display: flex;
 }
 
 .triButton {
@@ -212,24 +235,20 @@ header {
     align-items: center;
     height: 50px;
     width: 135px;
-    margin-top: 40px;
     margin-left: 60px;
     background-color: #901C1C;
     color: white;
     font-weight: bold;
     border: 0px;
     cursor: pointer;
-    position: absolute;
-    left: 50px;
-    top : -12px;
+
 }
 
 .sous {
     top: 38px;
     display: flex;
     padding-left: 20px;
-    border-top:solid 0.5px white ;
-    display: none;
+    border-top:solid 0.5px white;
 }
 
 .sous-1 {
@@ -251,6 +270,7 @@ header {
 .allMedias {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .mediaItem {
@@ -291,9 +311,33 @@ header {
     color: #901C1C;
 };
 
+
+
+#buttonPopularity {
+    justify-content: space-around;
+}
+
+#totalHeart {
+    margin-left: 9px;
+}
+
 .likeButton {
-    border: 0px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
     color: #901C1C;
+}
+
+.slider {
+    position: fixed;
+    display: flex;
+    top: 200px;
+    bottom: 400px;
+    left: 300px;
+    width: 600px;
+    height: 500px;
+    z-index: 99;
+    background-color: white;
 }
 
 .totalLikesWrapper {
@@ -309,28 +353,7 @@ header {
     background-color: rgba(228, 84, 84, 0.781);
 }
 
-#buttonPopularity {
-    justify-content: space-around;
-}
-
-#totalHeart {
-    margin-left: 9px;
-}
-
-@keyframes arrow-spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(180deg);
-    }
-}
-
-@keyframes menu-appearance {
-    from {
-        transform: translateY(20px);
-    }
-    to   {
-        transform: translateY(0px);
-    }
+.closeSlider {
+    color: #901C1C;
+    cursor: pointer;
 }

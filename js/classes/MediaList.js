@@ -85,6 +85,31 @@ class MediaList {
             }
         });
     }
+
+    listenForSlider()
+    {
+        this.all.forEach(media => {
+            let mediaOpener = document.querySelector(`[media-id="${media.id}"]`);
+            if(mediaOpener)
+            {
+                mediaOpener.addEventListener('click', this.openSlider());
+            }
+        });
+
+        document.getElementById("closeSlider").addEventListener('click', this.closeSlider());
+    }
+
+    openSlider()
+    {
+        console.log('ouvrir');
+        document.querySelector(".slider").style.display = "block";
+    }
+
+    closeSlider()
+    {
+        console.log('fermer');
+        document.querySelector(".slider").style.display = "none";
+    }
 }
 
 export default MediaList;

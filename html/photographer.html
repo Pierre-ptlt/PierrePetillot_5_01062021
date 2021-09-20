@@ -17,13 +17,19 @@
   <div class="photographerInfos" id="photographerInfos"></div>
   <div class="trier" id="trier">
     <p class="trierPar">Trier par</p>
-    <li class="deroulant">
-      <li><button class="triButton" id="buttonPopularity">Popularité <i class="fas fa-chevron-up arrowUp"></i></button></li>
-      <li><button class="triButton sous sous-1" id="buttonDate">Date</button></li>
-      <li><button class="triButton sous" id="buttonTitle">Titre</button></li>
-    </li>
+    <div class="deroulantClosed"><button class="triButton buttonDefault" id="buttonDefault">Popularité <i class="fas fa-chevron-up"></i></button></div>
+    <div class="deroulant">
+      <button class="triButton" id="buttonPopularity">Popularité <i class="fas fa-chevron-down"></i></button>
+      <button class="triButton sous sous-1" id="buttonDate">Date</button>
+      <button class="triButton sous" id="buttonTitle">Titre</button>
+    </div>
   </div>
-  <div class="allMedias" id="allMedias"></div>
+  <div class="allMedias" id="allMedias">
+  </div>
+  <div class="slider" id="slider">
+    <div class="mediaSliderWrapper" id="mediaSliderWrapper"></div>
+    <i class="fas fa-times closeSlider" id="closeSlider"></i>
+  </div>
   <div class="totalLikesWrapper">
     <div class="totalLikes" id="totalLikes"></div>
     <div class="totalPrice" id="totalPrice"></div>
