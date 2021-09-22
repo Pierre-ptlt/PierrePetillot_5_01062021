@@ -291,6 +291,7 @@ header {
     width: 250px;
     height: 250px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .mediaInfos {
@@ -331,6 +332,8 @@ header {
 .slider {
     position: fixed;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     top: 200px;
     bottom: 400px;
     left: 300px;
@@ -357,3 +360,26 @@ header {
     color: #901C1C;
     cursor: pointer;
 }
+
+.closeSliderWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.mediaSlider {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.sliderLeft {
+    color: #901C1C;
+    cursor: pointer;
+}
+
+.sliderRight {
+    color: #901C1C;
+    cursor: pointer;
+}
+

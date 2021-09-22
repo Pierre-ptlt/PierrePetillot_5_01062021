@@ -10,10 +10,10 @@ class Image extends Media {
 
     render()
     {
-        return `<div class="mediaItem">
-        <a href="#" class="mediaWrapper">
+        return `<div class="mediaItem" media-id="${this.id}">
+        <div class="mediaWrapper">
         <img class="media" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
-        </a>
+        </div>
         <div class="mediaInfos">
             <p class="mediaTitle">${this.title}</p>
             <div class="likes">
@@ -22,6 +22,13 @@ class Image extends Media {
             </div>
         </div>
     </div>`;
+    }
+
+
+    renderSlider()
+    {
+        return `<img class="mediaSlider" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
+    <p class="mediaTitleSlider">${this.title}</p>`;
     }
 }
 

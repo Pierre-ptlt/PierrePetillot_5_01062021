@@ -92,22 +92,23 @@ class MediaList {
             let mediaOpener = document.querySelector(`[media-id="${media.id}"]`);
             if(mediaOpener)
             {
-                mediaOpener.addEventListener('click', this.openSlider());
+                mediaOpener.addEventListener('click', () => {
+                    document.querySelector(".slider").style.display = "flex";
+                    document.getElementById("mediaSliderWrapper").innerHTML = media.renderSlider();
+                });
+                document.getElementById("sliderLeft").addEventListener('click', () => {
+                    
+                });
             }
         });
 
-        document.getElementById("closeSlider").addEventListener('click', this.closeSlider());
-    }
-
-    openSlider()
-    {
-        console.log('ouvrir');
-        document.querySelector(".slider").style.display = "block";
+        document.getElementById("closeSlider").addEventListener('click', () => {
+            this.closeSlider();
+        });
     }
 
     closeSlider()
     {
-        console.log('fermer');
         document.querySelector(".slider").style.display = "none";
     }
 }

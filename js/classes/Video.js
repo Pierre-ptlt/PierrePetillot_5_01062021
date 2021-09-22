@@ -11,11 +11,11 @@ class Video extends Media {
     render()
     {
         return `<div class="mediaItem" media-id="${this.id}">
-        <a href="#" class="mediaWrapper">
+        <div class="mediaWrapper">
         <video controls class="media">
             <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
         </video>
-        </a>
+        </div>
         <div class="mediaInfos">
             <p class="mediaTitle">${this.title}</p>
             <div class="likes">
@@ -24,6 +24,14 @@ class Video extends Media {
             </div>
         </div>
     </div>`;
+    }
+
+    renderSlider()
+    {
+        return `<video controls class="mediaSlider">
+        <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
+    </video>
+    <p class="mediaTitleSlider">${this.title}</p>`;
     }
 }
 
