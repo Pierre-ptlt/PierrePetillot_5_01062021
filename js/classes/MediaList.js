@@ -8,6 +8,7 @@ class MediaList {
          this.photographer = photographer;
          this.factory = new MediaFactory();
          this.totalLikes = 0;
+         this.currentSlideIndex = 0;
     }
 
     countTotalLikes()
@@ -34,10 +35,10 @@ class MediaList {
             }, 500);
     }
 
-    display()
+    display(list)
     {
         let html = "";
-        this.all.forEach(media => {
+        list.forEach(media => {
             html += media.render();
         });
         document.getElementById('allMedias').innerHTML = html;
@@ -52,15 +53,30 @@ class MediaList {
     listenForFilter()
     {
         document.getElementById('buttonPopularity').addEventListener('click',() => {
-            console.log(this.all.sort((a, b) => b.likes - a.likes));
+            let popSorted = (this.all.sort((a, b) => b.likes - a.likes));
+            this.display(popSorted);
+            document.getElementById('currentSort').innerHTML = 'Popularité <i class="fas fa-chevron-up">';
         });
 
         document.getElementById('buttonDate').addEventListener('click',() => {
-            console.log(this.all.sort((a, b) => b.date - a.date));
+            let dateSorted = (this.all.sort((a, b) => {
+                let dateA = new Date(a.date).getTime(), dateB = new Date(b.date).getTime();
+                return dateA - dateB;
+            }));
+            this.display(dateSorted);
+            document.getElementById('currentSort').innerHTML = 'Date <i class="fas fa-chevron-up">';
         });
 
         document.getElementById('buttonTitle').addEventListener('click',() => {
-            console.log(this.all.sort((a, b) => b.title - a.title));
+            let titleSorted = (this.all.sort((a, b) => {
+                let titleA = a.title.toLowerCase(), titleB = b.title.toLowerCase();
+                if (titleA < titleB) return -1;
+                if (titleA > titleB) return 1;
+                return 0;
+            }
+            ));
+            this.display(titleSorted);
+            document.getElementById('currentSort').innerHTML = 'Titre <i class="fas fa-chevron-up">';
         });
     }
 
@@ -86,20 +102,56 @@ class MediaList {
         });
     }
 
+    listenForSort()
+    {
+        let menuDefault = document.getElementById('currentSort');
+        let deroulant = document.getElementById('deroulant');
+        let sortButtons = document.querySelectorAll('.triButton');
+
+        if(menuDefault)
+        {
+            menuDefault.addEventListener('click', () => {
+                menuDefault.style.display = "none";
+                deroulant.style.display = "flex";
+            });
+        }
+
+        sortButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                menuDefault.style.display = "flex";
+                deroulant.style.display = "none";
+            });
+        });
+
+    }
+
     listenForSlider()
     {
+        let previous = document.getElementById("sliderPrevious");
+        let next = document.getElementById("sliderNext");
+
+        if (previous)
+        {
+            previous.addEventListener('click', () => {
+                this.currentSlideIndex--;
+                document.getElementById("mediaSliderWrapper").innerHTML = this.all[this.currentSlideIndex].renderSlider();
+            });
+        }
+
+        if (next)
+        {
+            document.getElementById("sliderNext").addEventListener('click', () => {
+                this.currentSlideIndex++;
+                document.getElementById("mediaSliderWrapper").innerHTML = this.all[this.currentSlideIndex].renderSlider();
+            });
+        }
+
         this.all.forEach(media => {
-            let mediaOpener = document.querySelector(`[media-id="${media.id}"]`);
-            if(mediaOpener)
-            {
-                mediaOpener.addEventListener('click', () => {
-                    document.querySelector(".slider").style.display = "flex";
-                    document.getElementById("mediaSliderWrapper").innerHTML = media.renderSlider();
-                });
-                document.getElementById("sliderLeft").addEventListener('click', () => {
-                    
-                });
-            }
+            document.querySelector(`[media-id="${media.id}"]`).addEventListener('click', () => {
+                this.currentSlideIndex = this.all.findIndex(item => item.id === media.id)
+                document.querySelector(".slider").style.display = "flex";
+                document.getElementById("mediaSliderWrapper").innerHTML = media.renderSlider();
+            });
         });
 
         document.getElementById("closeSlider").addEventListener('click', () => {

@@ -31,7 +31,7 @@ class Video extends Media {
         return `<video controls class="mediaSlider">
         <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
     </video>
-    <p class="mediaTitleSlider">${this.title}</p>`;
+    <p class="mediaTitleSlider basement">${this.title}</p>`;
     }
 }
 

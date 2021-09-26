@@ -28,7 +28,7 @@ class Image extends Media {
     renderSlider()
     {
         return `<img class="mediaSlider" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
-    <p class="mediaTitleSlider">${this.title}</p>`;
+    <p class="mediaTitleSlider basement">${this.title}</p>`;
     }
 }
 

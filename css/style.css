@@ -205,17 +205,22 @@ header {
 .buttonDefault {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 135px;
+    margin-left: 60px;
+    background-color: #901C1C;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    cursor: pointer;
 }
 
-.deroulantClosed {
+.currentSort {
     display: flex;
     position: absolute;
     left: 50px;
     top : 33px;
-}
-
-.deroulantClosed:hover {
-    display: none;
 }
 
 .deroulant {
@@ -224,10 +229,7 @@ header {
     position: absolute;
     left: 50px;
     top : 33px;
-}
-
-.deroulant:hover {
-    display: flex;
+    z-index: 99;
 }
 
 .triButton {
@@ -312,12 +314,6 @@ header {
     color: #901C1C;
 };
 
-
-
-#buttonPopularity {
-    justify-content: space-around;
-}
-
 #totalHeart {
     margin-left: 9px;
 }
@@ -331,7 +327,7 @@ header {
 
 .slider {
     position: fixed;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-around;
     top: 200px;
@@ -357,29 +353,39 @@ header {
 }
 
 .closeSlider {
+    position: absolute;
+    top: 30px;
+    right: 20px;
     color: #901C1C;
     cursor: pointer;
 }
 
 .closeSliderWrapper {
-    position: relative;
     display: flex;
     flex-direction: column;
 }
 
 .mediaSlider {
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 400px;
     object-fit: cover;
 }
 
-.sliderLeft {
+.sliderPrevious {
     color: #901C1C;
     cursor: pointer;
 }
 
-.sliderRight {
+.sliderNext {
     color: #901C1C;
     cursor: pointer;
 }
 
+.mediaTitleSlider {
+    margin-top: 15px;
+    font-size: small;
+}
+
+#buttonPopularity {
+    justify-content: space-around;
+}

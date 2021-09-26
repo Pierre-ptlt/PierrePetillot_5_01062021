@@ -17,8 +17,8 @@
   <div class="photographerInfos" id="photographerInfos"></div>
   <div class="trier" id="trier">
     <p class="trierPar">Trier par</p>
-    <div class="deroulantClosed"><button class="triButton buttonDefault" id="buttonDefault">Popularité <i class="fas fa-chevron-up"></i></button></div>
-    <div class="deroulant">
+    <div class="currentSort"><button class="buttonDefault" id="currentSort">Popularité <i class="fas fa-chevron-up"></i></button></div>
+    <div class="deroulant" id="deroulant">
       <button class="triButton" id="buttonPopularity">Popularité <i class="fas fa-chevron-down"></i></button>
       <button class="triButton sous sous-1" id="buttonDate">Date</button>
       <button class="triButton sous" id="buttonTitle">Titre</button>
@@ -27,12 +27,10 @@
   <div class="allMedias" id="allMedias">
   </div>
   <div class="slider" id="slider">
-    <i class="fas fa-chevron-left sliderLeft" id="sliderLeft"></i>
+    <i class="fas fa-chevron-left fa-2x sliderPrevious" id="sliderPrevious"></i>
     <div class="mediaSliderWrapper" id="mediaSliderWrapper"></div>
-    <div class ="closeSliderWrapper"></div>
-      <i class="fas fa-chevron-right sliderRight" id="sliderRight"></i>
-      <i class="fas fa-times closeSlider" id="closeSlider"></i>
-    </div>
+    <i class="fas fa-chevron-right fa-2x sliderNext" id="sliderNext"></i>
+    <i class="fas fa-times fa-2x closeSlider" id="closeSlider"></i>
   </div>
   <div class="totalLikesWrapper">
     <div class="totalLikes" id="totalLikes"></div>
