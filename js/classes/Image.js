@@ -11,7 +11,7 @@ class Image extends Media {
     render()
     {
         return `<div class="mediaItem" media-id="${this.id}">
-        <div class="mediaWrapper">
+        <div class="mediaWrapper" id="mediaWrapper" wrapper-id="${this.id}">
         <img class="media" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
         </div>
         <div class="mediaInfos">

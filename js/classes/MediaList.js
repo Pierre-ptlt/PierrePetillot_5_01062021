@@ -35,13 +35,23 @@ class MediaList {
             }, 500);
     }
 
-    display(list)
+    display()
     {
         let html = "";
-        list.forEach(media => {
+        this.all.forEach(media => {
             html += media.render();
         });
         document.getElementById('allMedias').innerHTML = html;
+        this.listen();
+    }
+
+    listen()
+    {
+        this.listenForFilter();
+        this.listenForLike();
+        this.listenForSlider();
+        this.listenForSort();
+        this.listenSliderChange();
     }
 
     displayTotalLikes()
@@ -53,29 +63,29 @@ class MediaList {
     listenForFilter()
     {
         document.getElementById('buttonPopularity').addEventListener('click',() => {
-            let popSorted = (this.all.sort((a, b) => b.likes - a.likes));
-            this.display(popSorted);
+            this.all = (this.all.sort((a, b) => b.likes - a.likes));
+            this.display();
             document.getElementById('currentSort').innerHTML = 'Popularité <i class="fas fa-chevron-up">';
         });
 
         document.getElementById('buttonDate').addEventListener('click',() => {
-            let dateSorted = (this.all.sort((a, b) => {
+            this.all = (this.all.sort((a, b) => {
                 let dateA = new Date(a.date).getTime(), dateB = new Date(b.date).getTime();
                 return dateA - dateB;
             }));
-            this.display(dateSorted);
+            this.display();
             document.getElementById('currentSort').innerHTML = 'Date <i class="fas fa-chevron-up">';
         });
 
         document.getElementById('buttonTitle').addEventListener('click',() => {
-            let titleSorted = (this.all.sort((a, b) => {
+            this.all = (this.all.sort((a, b) => {
                 let titleA = a.title.toLowerCase(), titleB = b.title.toLowerCase();
                 if (titleA < titleB) return -1;
                 if (titleA > titleB) return 1;
                 return 0;
             }
             ));
-            this.display(titleSorted);
+            this.display();
             document.getElementById('currentSort').innerHTML = 'Titre <i class="fas fa-chevron-up">';
         });
     }
@@ -125,7 +135,7 @@ class MediaList {
 
     }
 
-    listenForSlider()
+    listenSliderChange()
     {
         let previous = document.getElementById("sliderPrevious");
         let next = document.getElementById("sliderNext");
@@ -145,10 +155,13 @@ class MediaList {
                 document.getElementById("mediaSliderWrapper").innerHTML = this.all[this.currentSlideIndex].renderSlider();
             });
         }
+    }
 
+    listenForSlider()
+    {
         this.all.forEach(media => {
-            document.querySelector(`[media-id="${media.id}"]`).addEventListener('click', () => {
-                this.currentSlideIndex = this.all.findIndex(item => item.id === media.id)
+            document.querySelector(`[wrapper-id="${media.id}"]`).addEventListener('click', () => {
+                this.currentSlideIndex = this.all.findIndex(item => item.id === media.id);
                 document.querySelector(".slider").style.display = "flex";
                 document.getElementById("mediaSliderWrapper").innerHTML = media.renderSlider();
             });

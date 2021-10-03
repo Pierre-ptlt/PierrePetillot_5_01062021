@@ -61,7 +61,7 @@ class Photographer {
                     <div class="photographerDescriptionProfile">
                         <div class="profileNameWrapper">
                             <h1 class="photographerNameProfile">${this.name}</h1></a>
-                            <button class="contactMe">Contactez-moi</button>
+                            <button class="contactMe" id="contactMe">Contactez-moi</button>
                         </div>
                         <p class="basement">${this.city}, ${this.country}</p>
                         <p class="slogan">${this.tagline}</p>
@@ -69,6 +69,29 @@ class Photographer {
                     </div>
                     <img  class="portraitProfile" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
                 </div>`;
+        }
+
+        listenForContact()
+        {
+            const contactModal = document.getElementById('contactModal');
+            const contactBtn = document.getElementById('contactMe');
+            const closeBtn = document.getElementById('closeContact');
+            const sendBtn = document.getElementById('sendForm');
+            const formTitle = document.getElementById('contactTitle');
+            let title = formTitle.textContent;
+
+            contactBtn.addEventListener('click', () => {
+                formTitle.innerHTML =  title + `</br>` +this.name;
+                contactModal.style.display = "block";
+            });
+
+            closeBtn.addEventListener('click', () => {
+                contactModal.style.display = "none";
+            });
+
+            sendBtn.addEventListener('click', () => {
+                contactModal.style.display = "none";
+            });
         }
 }
 

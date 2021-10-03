@@ -12,12 +12,11 @@ const photographerId = urlParams.get('id');
     });
     let profile = new Photographer(photographer);
     profile.displayProfile();
+    profile.listenForContact();
 
     let list = new MediaList(profile);
     list.build(data);
     list.display(list.all);
+    list.listen();
     list.listenForLike();
-    list.listenForFilter();
-    list.listenForSlider();
-    list.listenForSort();
 });

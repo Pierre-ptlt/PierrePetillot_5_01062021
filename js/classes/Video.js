@@ -11,7 +11,7 @@ class Video extends Media {
     render()
     {
         return `<div class="mediaItem" media-id="${this.id}">
-        <div class="mediaWrapper">
+        <div class="mediaWrapper" class="mediaWrapper" wrapper-id="${this.id}">
         <video controls class="media">
             <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
         </video>

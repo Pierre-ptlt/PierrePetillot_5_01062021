@@ -15,6 +15,33 @@
     </a>
   </header>
   <div class="photographerInfos" id="photographerInfos"></div>
+  <div class="contactModal" id="contactModal">
+    <div class="contactTopWrapper">
+      <div class="contactTitle" id="contactTitle">Contactez moi</div>
+      <i class="fas fa-times fa-2x closeContact" id="closeContact"></i>
+    </div>
+    <div class="contactForm">
+      <form name="contact" method="GET">
+        <div class="formBlock">
+          <p class="formTitle">Prénom</p>
+          <input class="contactInput" type = "text" name="prénom">
+        </div>
+        <div class="formBlock">
+          <p class="formTitle">Nom</p>
+          <input class="contactInput" type = "text" name="nom">
+        </div>
+        <div class="formBlock">
+          <p class="formTitle">Email</p>
+          <input class="contactInput" type = "email" name="email">
+        </div>
+        <div class="formBlock">
+          <p class="formTitle">Votre message</p>
+          <input class="contactInput messageInput" type = "text" name="message">
+        </div>
+      </form>
+      <button class="contactMe sendForm" id="sendForm">Envoyer</button>
+    </div>
+  </div>
   <div class="trier" id="trier">
     <p class="trierPar">Trier par</p>
     <div class="currentSort"><button class="buttonDefault" id="currentSort">Popularité <i class="fas fa-chevron-up"></i></button></div>
