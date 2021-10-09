@@ -51,7 +51,6 @@ class MediaList {
         this.listenForLike();
         this.listenForSlider();
         this.listenForSort();
-        this.listenSliderChange();
     }
 
     displayTotalLikes()
@@ -137,24 +136,35 @@ class MediaList {
 
     listenSliderChange()
     {
-        let previous = document.getElementById("sliderPrevious");
-        let next = document.getElementById("sliderNext");
+        document.getElementById("sliderPrevious").addEventListener('click', () => {
+            if (this.currentSlideIndex == 0)
+            {
+                this.currentSlideIndex = this.all.length;
+            }
+            this.currentSlideIndex--;
+            document.getElementById("mediaSliderWrapper").innerHTML = this.all[this.currentSlideIndex].renderSlider();
+        });
 
-        if (previous)
-        {
-            previous.addEventListener('click', () => {
-                this.currentSlideIndex--;
+        document.getElementById("sliderNext").addEventListener('click', () => {
+            if (this.currentSlideIndex == this.all.length -1)
+            {
+                this.currentSlideIndex = 0;
                 document.getElementById("mediaSliderWrapper").innerHTML = this.all[this.currentSlideIndex].renderSlider();
-            });
-        }
-
-        if (next)
-        {
-            document.getElementById("sliderNext").addEventListener('click', () => {
+            }
+            else
+            {
                 this.currentSlideIndex++;
                 document.getElementById("mediaSliderWrapper").innerHTML = this.all[this.currentSlideIndex].renderSlider();
-            });
-        }
+            }
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 37)
+            {
+                console.log('aaa');
+                return false;
+            }
+        }, true);
     }
 
     listenForSlider()

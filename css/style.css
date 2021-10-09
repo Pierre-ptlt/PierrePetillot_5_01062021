@@ -45,7 +45,9 @@ header {
 .tags {
     display: flex;
     justify-content: space-between;
-    padding-top: 20px;
+    position: absolute;
+    top: 40px;
+    left: 30%;
 }
 
 .tag {
@@ -289,7 +291,6 @@ header {
 }
 
 .media {
-
     width: 250px;
     height: 250px;
     object-fit: cover;
@@ -391,8 +392,7 @@ header {
     display: none;
     align-items: center;
     justify-content: space-around;
-    top: 200px;
-    bottom: 400px;
+    top: 15%;
     left: 35%;
     width: 400px;
     height: 600px;
@@ -442,4 +442,126 @@ header {
 
 #buttonPopularity {
     justify-content: space-around;
+}
+
+@media only screen and (max-width: 420px)
+{
+    body {
+        padding: 5px 5px 0px 5px;
+    }
+
+    .logo {
+        margin-left: 0px;
+        padding: 0px;
+    }
+
+    .indexTitle {
+        margin-right: 0px;
+    }
+
+    .nosPhotographes {
+        font-size: smaller;
+        margin-top: 23px;
+    }
+
+    .indexHeader {
+        margin-right: 0px;
+    }
+
+    .tags {
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: center;
+        left: 0;
+        top: 20px;
+    }
+
+    .photographesIndex {
+        margin-top: 20px;
+    }
+
+    .photographerDescription {
+        align-items: center;
+    }
+
+    .photographerTags {
+        margin-left: 10%;
+    }
+
+    .totalLikesWrapper {
+        display: none;
+    }
+
+    .contactMe {
+        position: fixed;
+        bottom: 5%;
+        margin-top: 0px;
+        left: 12%;
+        height: 25px;
+        z-index: 99;
+        border-radius: 5px;
+    }
+
+    .photographerInfos {
+        padding: 0px;
+        position: relative;
+    }
+
+    .profile {
+        max-width: none;
+        background-color: white;
+        display: block;
+    }
+
+    .photographerDescriptionProfile {
+        margin-left: 0px;
+    }
+
+    .photographerNameProfile {
+        font-size: 35px;
+    }
+
+    .photographerTagsProfile {
+       font-size: smaller;
+    }
+
+    .portraitProfile {
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        border-radius: 55px;
+        margin-right: 0px;
+        margin-top: 0px;
+        top: 10%;
+        right: 2%;
+        object-fit: cover;
+    }
+
+    .slogan {
+        color: #757474;
+    }
+
+    .trier {
+        display: none;
+    }
+
+    .mediaItem {
+        margin-left: 0px;
+        margin-right: 0px;
+        min-width: none;
+        max-width: none;
+    }
+
+    .allMedias {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .media {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 10px;
+    }
 }

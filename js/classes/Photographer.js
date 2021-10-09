@@ -78,6 +78,10 @@ class Photographer {
             const closeBtn = document.getElementById('closeContact');
             const sendBtn = document.getElementById('sendForm');
             const formTitle = document.getElementById('contactTitle');
+            const nom = document.getElementById("inputNom");
+            const prenom = document.getElementById('inputPrenom');
+            const mail = document.getElementById('inputMail');
+            const message = document.getElementById('inputMessage');
             let title = formTitle.textContent;
 
             contactBtn.addEventListener('click', () => {
@@ -90,6 +94,10 @@ class Photographer {
             });
 
             sendBtn.addEventListener('click', () => {
+                console.log(prenom.value);
+                console.log(nom.value);
+                console.log(mail.value);
+                console.log(message.value);
                 contactModal.style.display = "none";
             });
         }
