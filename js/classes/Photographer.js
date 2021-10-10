@@ -19,7 +19,7 @@ class Photographer {
     displayTags() {
         let html = '';
         for (let tag of this.tags) {
-            html += `<span class="itemTag">#${tag} </span>`;
+            html += `<span class="itemTag" aria-label="tag">#${tag} </span>`;
         }
         return html;
     }
@@ -27,7 +27,7 @@ class Photographer {
     displayProfileTags() {
         let html = '';
         for (let tag of this.tags) {
-            html += `<a href="index.html?tag=${tag}" class="itemTag">#${tag} </a>`;
+            html += `<a href="index.html?tag=${tag}" class="itemTag" aria-label="tag">#${tag} </a>`;
         }
         return html;
     }
@@ -43,9 +43,9 @@ class Photographer {
 
     render() {
     return `<div class="photographer">
-                <a href="photographer.html?id=${this.id}" class="portraitWrapper">
-                <img  class="portrait" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
-                <h1 class="photographerName">${this.name}</h1></a>
+                <a href="photographer.html?id=${this.id}" class="portraitWrapper" aria-label="${this.name}">
+                <img  class="portrait" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}" alt="">
+                <h2 class="photographerName">${this.name}</h2></a>
                 <div class="photographerDescription">
                     <p class="basement">${this.city}, ${this.country}</p>
                     <p class="slogan">${this.tagline}</p>
@@ -61,13 +61,13 @@ class Photographer {
                     <div class="photographerDescriptionProfile">
                         <div class="profileNameWrapper">
                             <h1 class="photographerNameProfile">${this.name}</h1></a>
-                            <button class="contactMe" id="contactMe">Contactez-moi</button>
+                            <button class="contactMe" aria-label="contact Me" id="contactMe">Contactez-moi</button>
                         </div>
                         <p class="basement">${this.city}, ${this.country}</p>
                         <p class="slogan">${this.tagline}</p>
                         <p class="photographerTagsProfile">${this.displayProfileTags()}</p>
                     </div>
-                    <img  class="portraitProfile" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
+                    <img  class="portraitProfile" alt="" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}">
                 </div>`;
         }
 

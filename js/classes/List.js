@@ -40,7 +40,7 @@ class List {
     for (let tag of this.tags) {
       document.getElementById(
         "tags"
-      ).innerHTML += `<button class="tag" data-tag-id="${tag}">#${this.formatTags(tag)} </button>`;
+      ).innerHTML += `<button class="tag" data-tag-id="${tag}" aria-label="${this.formatTags(tag)}">#${this.formatTags(tag)} </button>`;
     }
   }
 

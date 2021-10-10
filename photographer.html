@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>FishEye</title>
+  <meta name="FishEye" content="FishEye">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">
+        <img alt="fisheye home page" class="logo" aria-label="logo" src="/images/Sample-Photos/logo.png">
+    </a>
+  </header>
+  <div class="photographerInfos" id="photographerInfos"></div>
+  <div class="contactModal" id="contactModal" aria-label="contact me">
+    <div class="contactTopWrapper">
+      <div class="contactTitle" id="contactTitle">Contactez moi</div>
+      <i class="fas fa-times fa-2x closeContact" id="closeContact" aria-label="Close contact form"></i>
+    </div>
+    <div class="contactForm">
+      <form name="contact" method="GET">
+        <div class="formBlock">
+          <p class="formTitle">Prénom</p>
+          <input class="contactInput" type = "text" name="prénom" id="inputPrenom" label="first name">
+        </div>
+        <div class="formBlock">
+          <p class="formTitle">Nom</p>
+          <input class="contactInput" type = "text" name="nom" id="inputNom" label="last name">
+        </div>
+        <div class="formBlock">
+          <p class="formTitle">Email</p>
+          <input class="contactInput" type = "email" name="email" id="inputMail" label="Email">
+        </div>
+        <div class="formBlock">
+          <p class="formTitle">Votre message</p>
+          <input class="contactInput messageInput" type = "text" name="message" id="inputMessage" label="your message">
+        </div>
+      </form>
+      <button class="contactMe sendForm" id="sendForm" aria-label="send">Envoyer</button>
+    </div>
+  </div>
+  <div class="trier" aria-label="order by" id="trier">
+    <p class="trierPar">Trier par</p>
+    <div class="currentSort"><button class="buttonDefault" id="currentSort" role="button" aria-haspopup="listbox" aria-expanded="">Popularité <i class="fas fa-chevron-up"></i></button></div>
+    <div class="deroulant" id="deroulant">
+      <button class="triButton" id="buttonPopularity">Popularité <i class="fas fa-chevron-down"></i></button>
+      <button class="triButton sous sous-1" id="buttonDate">Date</button>
+      <button class="triButton sous" id="buttonTitle">Titre</button>
+    </div>
+  </div>
+  <div class="allMedias" id="allMedias">
+  </div>
+  <div class="slider" id="slider" aria-label="image closeup view">
+    <i class="fas fa-chevron-left fa-2x sliderPrevious" id="sliderPrevious" aria-label="Previous image"></i>
+    <div class="mediaSliderWrapper" id="mediaSliderWrapper"></div>
+    <i class="fas fa-chevron-right fa-2x sliderNext" id="sliderNext" aria-label="Next image"></i>
+    <i class="fas fa-times fa-2x closeSlider" id="closeSlider" aria-label="close dialog"></i>
+  </div>
+  <div class="totalLikesWrapper">
+    <div class="totalLikes" id="totalLikes"></div>
+    <div class="totalPrice" id="totalPrice"></div>
+  </div>
+  <script type="module" src="/js/classes/Photographer.js"></script>
+  <script type="module" src="/js/pages/profil.js"></script>
+</body>
+</html>
