@@ -44,7 +44,7 @@ class Photographer {
     render() {
     return `<div class="photographer">
                 <a href="photographer.html?id=${this.id}" class="portraitWrapper" aria-label="${this.name}">
-                <img  class="portrait" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}" alt="">
+                <img  class="portrait" src="../../images/Sample-Photos/Photographers-ID-Photos/${this.portrait}" alt="${this.name}">
                 <h2 class="photographerName">${this.name}</h2></a>
                 <div class="photographerDescription">
                     <p class="basement">${this.city}, ${this.country}</p>
