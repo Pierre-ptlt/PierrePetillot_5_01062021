@@ -93,6 +93,13 @@ class Photographer {
                 contactModal.style.display = "none";
             });
 
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape")
+                {
+                    contactModal.style.display = "none";
+                }
+            });
+
             sendBtn.addEventListener('click', () => {
                 console.log(prenom.value);
                 console.log(nom.value);

@@ -23,20 +23,20 @@
     <div class="contactForm">
       <form name="contact" method="GET">
         <div class="formBlock">
-          <p class="formTitle">Prénom</p>
-          <input class="contactInput" type = "text" name="prénom" id="inputPrenom" label="first name">
+          <label class="formTitle">Prénom</label>
+          <input class="contactInput" type = "text" name="prénom" id="inputPrenom" aria-label="first name">
         </div>
         <div class="formBlock">
-          <p class="formTitle">Nom</p>
-          <input class="contactInput" type = "text" name="nom" id="inputNom" label="last name">
+          <label class="formTitle">Nom</label>
+          <input class="contactInput" type = "text" name="nom" id="inputNom" aria-label="last name">
         </div>
         <div class="formBlock">
-          <p class="formTitle">Email</p>
-          <input class="contactInput" type = "email" name="email" id="inputMail" label="Email">
+          <label class="formTitle">Email</label>
+          <input class="contactInput" type = "email" name="email" id="inputMail" aria-label="Email">
         </div>
         <div class="formBlock">
-          <p class="formTitle">Votre message</p>
-          <input class="contactInput messageInput" type = "text" name="message" id="inputMessage" label="your message">
+          <label class="formTitle">Votre message</label>
+          <input class="contactInput messageInput" type = "text" name="message" id="inputMessage" aria-label="your message">
         </div>
       </form>
       <button class="contactMe sendForm" id="sendForm" aria-label="send">Envoyer</button>
@@ -44,7 +44,7 @@
   </div>
   <div class="trier" aria-label="order by" id="trier">
     <p class="trierPar">Trier par</p>
-    <div class="currentSort"><button class="buttonDefault" id="currentSort" role="button" aria-haspopup="listbox" aria-expanded="">Popularité <i class="fas fa-chevron-up"></i></button></div>
+    <div class="currentSort"><button class="buttonDefault" id="currentSort" role="button" aria-haspopup="listbox">Popularité <i class="fas fa-chevron-up"></i></button></div>
     <div class="deroulant" id="deroulant">
       <button class="triButton" id="buttonPopularity">Popularité <i class="fas fa-chevron-down"></i></button>
       <button class="triButton sous sous-1" id="buttonDate">Date</button>

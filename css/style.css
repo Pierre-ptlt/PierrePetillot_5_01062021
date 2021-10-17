@@ -328,7 +328,7 @@ header {
 
 .mediaTitle {
     color: #901C1C;
-};
+}
 
 #totalHeart {
     margin-left: 9px;
@@ -563,7 +563,7 @@ header {
     .mediaItem {
         margin-left: 0px;
         margin-right: 0px;
-        min-width: none;
+        min-width: 0;
         max-width: none;
     }
 
@@ -578,6 +578,20 @@ header {
         object-fit: cover;
         cursor: pointer;
         border-radius: 10px;
+    }
+
+    .slider {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        background-color: white;
+    }
+
+    .mediaSlider {
+        width: 80vw;
+        height: 74vh;
     }
 
     .contactModal {
