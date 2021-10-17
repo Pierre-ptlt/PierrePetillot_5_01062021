@@ -12,7 +12,7 @@ class Video extends Media {
     {
         return `<div class="mediaItem" media-id="${this.id}">
         <div class="mediaWrapper" class="mediaWrapper" wrapper-id="${this.id}">
-        <video controls class="media" aria-label="${this.name}">
+        <video tabindex="0" controls class="media" aria-label="${this.name}">
             <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
         </video>
         </div>

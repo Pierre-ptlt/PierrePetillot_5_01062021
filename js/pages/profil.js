@@ -17,6 +17,7 @@ const photographerId = urlParams.get('id');
     let list = new MediaList(profile);
     list.build(data);
     list.display(list.all);
+    list.listen();
     list.listenForFilter();
     list.listenForLike();
     list.listenForSlider();

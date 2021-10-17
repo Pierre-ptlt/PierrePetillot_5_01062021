@@ -12,7 +12,7 @@ class Image extends Media {
     {
         return `<div class="mediaItem" media-id="${this.id}">
         <div class="mediaWrapper" id="mediaWrapper" wrapper-id="${this.id}">
-        <img class="media" alt="${this.name}, closeup view" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
+        <img tabindex="0" class="media" alt="${this.name}, closeup view" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
         </div>
         <div class="mediaInfos">
             <p class="mediaTitle">${this.title}</p>
