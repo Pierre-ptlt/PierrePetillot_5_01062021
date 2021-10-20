@@ -45,12 +45,12 @@ class List {
   }
 
   listenForFiltering() {
-    const tagButtons = document.querySelectorAll('.tag');
+    const tagButtons = document.querySelectorAll(".tag");
     tagButtons.forEach((tagButton) => {
 
-        tagButton.addEventListener('click', () => {
+        tagButton.addEventListener("click", () => {
 
-          let tagName = tagButton.getAttribute('data-tag-id');
+          let tagName = tagButton.getAttribute("data-tag-id");
 
 
             if (!this.tagsSelected.has(tagName)) {

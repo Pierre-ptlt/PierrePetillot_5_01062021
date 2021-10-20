@@ -2,10 +2,10 @@ import Photographer from "../classes/Photographer.js";
 import MediaList from "../classes/MediaList.js";
 
 const urlParams = new URLSearchParams(window.location.search);
-const photographerId = urlParams.get('id');
+const photographerId = urlParams.get("id");
 
 
- fetch('../datas.json').then((response) => response.json())
+ fetch("../datas.json").then((response) => response.json())
 .then(data => {
     const photographer = data.photographers.find(({ id }) => {
         return photographerId === id.toString();

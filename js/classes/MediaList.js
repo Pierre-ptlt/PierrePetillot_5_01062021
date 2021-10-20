@@ -41,7 +41,7 @@ class MediaList {
         this.all.forEach(media => {
             html += media.render();
         });
-        document.getElementById('allMedias').innerHTML = html;
+        document.getElementById("allMedias").innerHTML = html;
         this.listen();
     }
 
@@ -55,28 +55,28 @@ class MediaList {
 
     displayTotalLikes()
     {
-        document.getElementById('totalLikes').innerHTML = this.totalLikes + `<i class="fas fa-heart" id="totalHeart"></i>`;
-        document.getElementById('totalPrice').innerHTML = `<p class="price">${this.photographer.price}€/jour</p>`;
+        document.getElementById("totalLikes").innerHTML = this.totalLikes + "<i class=\"fas fa-heart\" id=\"totalHeart\"></i>";
+        document.getElementById("totalPrice").innerHTML = `<p class="price">${this.photographer.price}€/jour</p>`;
     }
 
     listenForFilter()
     {
-        document.getElementById('buttonPopularity').addEventListener('click',() => {
+        document.getElementById("buttonPopularity").addEventListener("click",() => {
             this.all = (this.all.sort((a, b) => b.likes - a.likes));
             this.display();
-            document.getElementById('currentSort').innerHTML = 'Popularité <i class="fas fa-chevron-up">';
+            document.getElementById("currentSort").innerHTML = "Popularité <i class=\"fas fa-chevron-up\">";
         });
 
-        document.getElementById('buttonDate').addEventListener('click',() => {
+        document.getElementById("buttonDate").addEventListener("click",() => {
             this.all = (this.all.sort((a, b) => {
                 let dateA = new Date(a.date).getTime(), dateB = new Date(b.date).getTime();
                 return dateA - dateB;
             }));
             this.display();
-            document.getElementById('currentSort').innerHTML = 'Date <i class="fas fa-chevron-up">';
+            document.getElementById("currentSort").innerHTML = "Date <i class=\"fas fa-chevron-up\">";
         });
 
-        document.getElementById('buttonTitle').addEventListener('click',() => {
+        document.getElementById("buttonTitle").addEventListener("click",() => {
             this.all = (this.all.sort((a, b) => {
                 let titleA = a.title.toLowerCase(), titleB = b.title.toLowerCase();
                 if (titleA < titleB) return -1;
@@ -85,7 +85,7 @@ class MediaList {
             }
             ));
             this.display();
-            document.getElementById('currentSort').innerHTML = 'Titre <i class="fas fa-chevron-up">';
+            document.getElementById("currentSort").innerHTML = "Titre <i class=\"fas fa-chevron-up\">";
         });
     }
 
@@ -95,7 +95,7 @@ class MediaList {
             let likeButton = document.querySelector(`[data-id="${media.id}"]`);
             if (likeButton)
             {
-                likeButton.addEventListener('click', () => {
+                likeButton.addEventListener("click", () => {
                     media.toggle();
                     if(!media.isLiked)
                     {
@@ -113,20 +113,20 @@ class MediaList {
 
     listenForSort()
     {
-        let menuDefault = document.getElementById('currentSort');
-        let deroulant = document.getElementById('deroulant');
-        let sortButtons = document.querySelectorAll('.triButton');
+        let menuDefault = document.getElementById("currentSort");
+        let deroulant = document.getElementById("deroulant");
+        let sortButtons = document.querySelectorAll(".triButton");
 
         if(menuDefault)
         {
-            menuDefault.addEventListener('click', () => {
+            menuDefault.addEventListener("click", () => {
                 menuDefault.style.display = "none";
                 deroulant.style.display = "flex";
             });
         }
 
         sortButtons.forEach(button => {
-            button.addEventListener('click', () => {
+            button.addEventListener("click", () => {
                 menuDefault.style.display = "flex";
                 deroulant.style.display = "none";
             });
@@ -136,22 +136,22 @@ class MediaList {
 
     listenSliderChange()
     {
-        document.getElementById("sliderPrevious").addEventListener('click', () => {
+        document.getElementById("sliderPrevious").addEventListener("click", () => {
             this.sliderPrevious();
         });
 
-        document.getElementById("sliderNext").addEventListener('click', () => {
+        document.getElementById("sliderNext").addEventListener("click", () => {
             this.sliderNext();
         });
 
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener("keydown", (e) => {
             if (e.key === "ArrowRight")
             {
                 this.sliderNext();
             }
         }, true);
 
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener("keydown", (e) => {
             if (e.key === "ArrowLeft")
             {
                 this.sliderPrevious();
@@ -186,7 +186,7 @@ class MediaList {
     listenForSlider()
     {
         this.all.forEach(media => {
-            document.querySelector(`[wrapper-id="${media.id}"]`).addEventListener('click', () => {
+            document.querySelector(`[wrapper-id="${media.id}"]`).addEventListener("click", () => {
                 this.currentSlideIndex = this.all.findIndex(item => item.id === media.id);
                 document.querySelector(".slider").style.display = "flex";
                 document.getElementById("mediaSliderWrapper").innerHTML = media.renderSlider();
@@ -204,11 +204,11 @@ class MediaList {
             }, true);
         });
 
-        document.getElementById("closeSlider").addEventListener('click', () => {
+        document.getElementById("closeSlider").addEventListener("click", () => {
             this.closeSlider();
         });
 
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener("keydown", (e) => {
             if (e.key === "Escape")
             {
                 this.closeSlider();

@@ -13,11 +13,11 @@ class Photographer {
 
     displayProfile()
     {
-        document.getElementById('photographerInfos').innerHTML = this.renderProfile();
+        document.getElementById("photographerInfos").innerHTML = this.renderProfile();
     }
 
     displayTags() {
-        let html = '';
+        let html = "";
         for (let tag of this.tags) {
             html += `<span class="itemTag" aria-label="tag">#${tag} </span>`;
         }
@@ -25,7 +25,7 @@ class Photographer {
     }
 
     displayProfileTags() {
-        let html = '';
+        let html = "";
         for (let tag of this.tags) {
             html += `<a href="index.html?tag=${tag}" class="itemTag" aria-label="tag">#${tag} </a>`;
         }
@@ -73,34 +73,34 @@ class Photographer {
 
         listenForContact()
         {
-            const contactModal = document.getElementById('contactModal');
-            const contactBtn = document.getElementById('contactMe');
-            const closeBtn = document.getElementById('closeContact');
-            const sendBtn = document.getElementById('sendForm');
-            const formTitle = document.getElementById('contactTitle');
+            const contactModal = document.getElementById("contactModal");
+            const contactBtn = document.getElementById("contactMe");
+            const closeBtn = document.getElementById("closeContact");
+            const sendBtn = document.getElementById("sendForm");
+            const formTitle = document.getElementById("contactTitle");
             const nom = document.getElementById("inputNom");
-            const prenom = document.getElementById('inputPrenom');
-            const mail = document.getElementById('inputMail');
-            const message = document.getElementById('inputMessage');
+            const prenom = document.getElementById("inputPrenom");
+            const mail = document.getElementById("inputMail");
+            const message = document.getElementById("inputMessage");
             let title = formTitle.textContent;
 
-            contactBtn.addEventListener('click', () => {
-                formTitle.innerHTML =  title + `</br>` +this.name;
+            contactBtn.addEventListener("click", () => {
+                formTitle.innerHTML =  title + "</br>" +this.name;
                 contactModal.style.display = "block";
             });
 
-            closeBtn.addEventListener('click', () => {
+            closeBtn.addEventListener("click", () => {
                 contactModal.style.display = "none";
             });
 
-            document.addEventListener('keydown', (e) => {
+            document.addEventListener("keydown", (e) => {
                 if (e.key === "Escape")
                 {
                     contactModal.style.display = "none";
                 }
             });
 
-            sendBtn.addEventListener('click', () => {
+            sendBtn.addEventListener("click", () => {
                 console.log(prenom.value);
                 console.log(nom.value);
                 console.log(mail.value);

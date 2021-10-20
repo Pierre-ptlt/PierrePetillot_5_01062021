@@ -20,7 +20,7 @@ class Video extends Media {
             <p class="mediaTitle">${this.title}</p>
             <div class="likes">
                 <div class="mediaLikes" data-media-id=${this.id}>${this.likes}</div>
-                <button class="likeButton" alt="likes" data-id="${this.id}"><i class="fas fa-heart"></i></button>
+                <button class="likeButton" alt="likes" data-id="${this.id}"><span class="fas fa-heart"></span></button>
             </div>
         </div>
     </div>`;

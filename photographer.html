@@ -18,25 +18,25 @@
   <div class="contactModal" id="contactModal" aria-label="contact me">
     <div class="contactTopWrapper">
       <div class="contactTitle" id="contactTitle">Contactez moi</div>
-      <i class="fas fa-times fa-2x closeContact" id="closeContact" aria-label="Close contact form"></i>
+      <span class="fas fa-times fa-2x closeContact" id="closeContact" aria-label="Close contact form"></span>
     </div>
     <div class="contactForm">
       <form name="contact" method="GET">
         <div class="formBlock">
-          <label class="formTitle">Prénom</label>
-          <input class="contactInput" type = "text" name="prénom" id="inputPrenom" aria-label="first name">
+          <label for="inputPrenom" class="formTitle">Prénom</label>
+          <input class="contactInput" type="text" name="inputPrenom" id="inputPrenom" aria-label="first name">
         </div>
         <div class="formBlock">
-          <label class="formTitle">Nom</label>
-          <input class="contactInput" type = "text" name="nom" id="inputNom" aria-label="last name">
+          <label for="inputNom" class="formTitle">Nom</label>
+          <input class="contactInput" type="text" name="inputNom" id="inputNom" aria-label="last name">
         </div>
         <div class="formBlock">
-          <label class="formTitle">Email</label>
-          <input class="contactInput" type = "email" name="email" id="inputMail" aria-label="Email">
+          <label for="inputMail" class="formTitle">Email</label>
+          <input class="contactInput" type="email" name="inputMail" id="inputMail" aria-label="Email">
         </div>
         <div class="formBlock">
-          <label class="formTitle">Votre message</label>
-          <input class="contactInput messageInput" type = "text" name="message" id="inputMessage" aria-label="your message">
+          <label for="inputMessage" class="formTitle">Votre message</label>
+          <input class="contactInput messageInput" type="text" name="inputMessage" id="inputMessage" aria-label="your message">
         </div>
       </form>
       <button class="contactMe sendForm" id="sendForm" aria-label="send">Envoyer</button>
@@ -44,9 +44,9 @@
   </div>
   <div class="trier" aria-label="order by" id="trier">
     <p class="trierPar">Trier par</p>
-    <div class="currentSort"><button class="buttonDefault" id="currentSort" role="button" aria-haspopup="listbox">Popularité <i class="fas fa-chevron-up"></i></button></div>
+    <div class="currentSort"><button class="buttonDefault" id="currentSort" role="button" aria-haspopup="listbox">Popularité <span class="fas fa-chevron-up"></span></button></div>
     <div class="deroulant" id="deroulant">
-      <button class="triButton" id="buttonPopularity">Popularité <i class="fas fa-chevron-down"></i></button>
+      <button class="triButton" id="buttonPopularity">Popularité <span class="fas fa-chevron-down"></span></button>
       <button class="triButton sous sous-1" id="buttonDate">Date</button>
       <button class="triButton sous" id="buttonTitle">Titre</button>
     </div>
@@ -54,10 +54,10 @@
   <div class="allMedias" id="allMedias">
   </div>
   <div class="slider" id="slider" aria-label="image closeup view">
-    <i class="fas fa-chevron-left fa-2x sliderPrevious" id="sliderPrevious" aria-label="Previous image"></i>
+    <span class="fas fa-chevron-left fa-2x sliderPrevious" id="sliderPrevious" aria-label="Previous image"></span>
     <div class="mediaSliderWrapper" id="mediaSliderWrapper"></div>
-    <i class="fas fa-chevron-right fa-2x sliderNext" id="sliderNext" aria-label="Next image"></i>
-    <i class="fas fa-times fa-2x closeSlider" id="closeSlider" aria-label="close dialog"></i>
+    <span class="fas fa-chevron-right fa-2x sliderNext" id="sliderNext" aria-label="Next image"></span>
+    <span class="fas fa-times fa-2x closeSlider" id="closeSlider" aria-label="close dialog"></span>
   </div>
   <div class="totalLikesWrapper">
     <div class="totalLikes" id="totalLikes"></div>

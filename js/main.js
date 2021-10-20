@@ -1,9 +1,9 @@
-import List from './classes/List.js';
+import List from "./classes/List.js";
 
-fetch('../datas.json').then(data => data.json())
+fetch("../datas.json").then(data => data.json())
 .then(data => {
     const urlParams = new URLSearchParams(window.location.search);
-    const urlTag = urlParams.get('tag');
+    const urlTag = urlParams.get("tag");
 
     let list = new List();
 
