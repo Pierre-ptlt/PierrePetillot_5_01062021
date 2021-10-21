@@ -12,7 +12,7 @@ class Video extends Media {
     {
         return `<div class="mediaItem" media-id="${this.id}">
         <div class="mediaWrapper" class="mediaWrapper" wrapper-id="${this.id}">
-        <video tabindex="0" controls class="media" aria-label="${this.name}">
+        <video tabindex="0" controls class="media" aria-label="${this.title}">
             <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
         </video>
         </div>
@@ -28,7 +28,7 @@ class Video extends Media {
 
     renderSlider()
     {
-        return `<video aria-label="${this.name}" controls class="mediaSlider">
+        return `<video aria-label="${this.title}" controls class="mediaSlider">
         <source src="../../images/Sample-Photos/${this.photographerName}/${this.src}">
     </video>
     <p class="mediaTitleSlider basement">${this.title}</p>`;

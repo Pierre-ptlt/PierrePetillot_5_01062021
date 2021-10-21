@@ -12,7 +12,7 @@ class Image extends Media {
     {
         return `<div class="mediaItem" media-id="${this.id}">
         <div class="mediaWrapper" id="mediaWrapper" wrapper-id="${this.id}">
-        <img tabindex="0" class="media" alt="${this.name}, closeup view" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
+        <img tabindex="0" class="media" alt="${this.title}, closeup view" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
         </div>
         <div class="mediaInfos">
             <p class="mediaTitle">${this.title}</p>
@@ -27,7 +27,7 @@ class Image extends Media {
 
     renderSlider()
     {
-        return `<img class="mediaSlider" alt="${this.name}" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
+        return `<img class="mediaSlider" alt="${this.title}" src="../../images/Sample-Photos/${this.photographerName}/${this.image}">
     <p class="mediaTitleSlider basement">${this.title}</p>`;
     }
 }
